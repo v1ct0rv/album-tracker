@@ -26,8 +26,12 @@ angular.module('albumTrackerApp', [
         authenticate: true
       })
       .when('/albums', {
-        templateUrl: 'views/albums.html',
+        templateUrl: 'partials/albums',
         controller: 'AlbumsCtrl'
+      })
+      .when('/editAlbum/:albumId', {
+        templateUrl: 'partials/editalbum',
+        controller: 'EditalbumCtrl'
       })
       .otherwise({
         redirectTo: '/'

@@ -1,0 +1,38 @@
+<div ng-include="'partials/navbar.html'"></div>
+
+<h1>{{album.name}}</h1>
+
+<h3></h3>
+
+<div class="row">
+    <!-- Nav tabs -->
+    <ul id="myTab" class="nav nav-tabs">
+      <li class="active"><a href="#stickers" data-toggle="tab">Stickers ({{album.totalStickers}})</a></li>
+      <li><a href="#duplicated" data-toggle="tab">Duplicated ({{album.duplicated}})</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="stickers">
+        <div ng-repeat="sticker in albumStickers()" class="col-md-1 {{getClass(sticker)}}" ng-click="updateSticker(sticker.id);">
+          <p>
+            {{sticker.id}}  
+          </p>
+        </div>
+      </div>
+      <div class="tab-pane" id="duplicated">
+        <div ng-repeat="n in range(album.duplicated) track by $index" class="col-md-1 alert-danger">
+          <p>
+            {{$index + 1}}  
+          </p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+    $('#myTab a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+</script>

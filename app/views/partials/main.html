@@ -4,15 +4,38 @@
   <h1>Album Tracker</h1>
   <p class="lead">
     <span ng-show="currentUser">Welcome back {{ currentUser.name }}!</span>
-    This application help you to fill you sticker album, .  <span ng-hide="currentUser"> Login to sta<span>
+    This application help you to fill more quickly you sticker album
   </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
 </div>
-
 <div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
+  You only need to:
+  <ul>
+    <li>Fill you progress</li>
+    <li>Fill repeated stickers</li>
+  </ul>
+  When another user has repeated sticker that you do not have a notification will be show and you can exchange or buy the sticker.  <span ng-hide="currentUser"> <a href="/login">Login</a> / <a href="Sign Up">Signup</a> to start<span>
+  <h2 class="sub-header">My Albums</h2>
+  <div class="table-responsive">
+    <table class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th>Album Name</th>
+          <th>Stickers</th>
+          <th>Percentage Fill</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      <tr ng-repeat="album in albums" ng-class="{danger: (getPercentage(album) < 10), warning: (getPercentage(album) > 10 && getPercentage(album) < 50), info: (getPercentage(album) > 50 && getPercentage(album) < 100), success: (getPercentage(album) == 100) }">
+        <td>{{album.name}}</td>
+        <td>{{album.stickers}}/{{album.totalStickers}}</td>
+        <td>{{getPercentage(album)  | number:2}}%</td>
+        <td>
+           <a href="#/editAlbum/{{album.id}}" role="button" class="btn btn-primary btn-sm">
+            <span class="glyphicon glyphicon-edit"></span>
+          </a>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
 

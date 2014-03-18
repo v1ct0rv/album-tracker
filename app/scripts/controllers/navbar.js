@@ -8,6 +8,9 @@ angular.module('albumTrackerApp')
     }, {
       'title': 'Settings',
       'link': '/settings'
+    }, {
+      'title': 'Albums',
+      'link': '/albums'
     }];
     
     $scope.logout = function() {

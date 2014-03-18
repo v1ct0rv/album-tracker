@@ -77,3 +77,8 @@ body {
     border-bottom: 0;
   }
 }
+
+.row [class^="col-"] {
+  margin-top: 5px;
+  margin-left: 20px;
+}
