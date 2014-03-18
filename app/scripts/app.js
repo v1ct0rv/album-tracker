@@ -25,6 +25,10 @@ angular.module('albumTrackerApp', [
         controller: 'SettingsCtrl',
         authenticate: true
       })
+      .when('/albums', {
+        templateUrl: 'views/albums.html',
+        controller: 'AlbumsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
