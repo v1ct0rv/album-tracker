@@ -20,4 +20,4 @@ Launch your express server in `debug-brk` mode with a node-inspector tab.
 grunt serve:debug
 ``` 
 
-for more information about how to create new features like, controllers, directives, filters, etc, we are using [AngularJS + Express Full Stack Generator](AngularJS + Express Full Stack Generator)
+for more information about how to create new features like, controllers, directives, filters, etc, we are using [AngularJS + Express Full Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack)
